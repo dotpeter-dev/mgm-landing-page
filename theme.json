@@ -1,7 +1,13 @@
 {
-  "settings": {
-      "color": {
-          "link": true
-      }
-  }
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+    "color": {
+      "link": true
+    }
+  },
+	"styles": {},
+	"customTemplates": {},
+	"templateParts": {},
+	"patterns": []
 }

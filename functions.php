@@ -12,6 +12,8 @@ function mgm_lp_setup() {
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'custom-spacing' );
 	add_theme_support( 'appearance-tools' );
+	add_theme_support( 'border' );
+	add_theme_support( 'link-color' );
 
 	add_theme_support(
 		'editor-color-palette',
@@ -42,3 +44,22 @@ function mgm_lp_setup() {
 }
 
 add_action( 'after_setup_theme', 'theme_mgm_setup' );
+
+
+
+
+function theme_slug_enqueue_styles() {
+	wp_enqueue_style( 
+		'theme-slug-style', 
+		get_stylesheet_uri()
+	);
+
+	wp_enqueue_style( 
+		'theme-slug-primary',
+		get_parent_theme_file_uri( 'assets/css/primary.css' )
+	);
+
+	add_editor_style( get_stylesheet_uri() );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_slug_enqueue_styles' );
